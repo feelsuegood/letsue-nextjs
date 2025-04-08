@@ -9,6 +9,10 @@ app/
 ├── (home)/          # Home page route group
 ├── (movies)/        # Movies route group
 │   └── movies/      # Movie details and credits
+│       └── [id]/    # Movie detail page
+│           ├── credits/    # Movie credits
+│           ├── similar/    # Similar movies (Coming Soon)
+│           └── provider/   # Streaming providers (Coming Soon)
 ├── about-us/        # About us page
 ├── layout.tsx       # Root layout
 └── not-found.tsx    # 404 page
@@ -32,6 +36,11 @@ styles/
 lib/
 └── constants.ts     # API constants
 ```
+
+## Upcoming Features
+
+- Similar Movies: Show movies similar to the current movie
+- Streaming Providers: Display where the movie is available to stream
 
 ## Styling
 

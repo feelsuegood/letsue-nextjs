@@ -1,19 +1,13 @@
 import styles from "../styles/movie-credit.module.css";
-import { API_URL } from "../app/(home)/page";
-import noImage from "../img/no-image.png";
+import { API_URL } from "../lib/constants";
 import Link from "next/link";
 
 export async function getMovieCredit(id: string) {
   const response = await fetch(`${API_URL}/${id}/credits`);
-  const data = await response.json();
-  return data;
+  return response.json();
 }
 
-export default async function MovieCredit({
-  params: { id },
-}: {
-  params: { id: string };
-}) {
+export default async function MovieCredit({ id }: { id: string }) {
   const credits = await getMovieCredit(id);
   return (
     <div className={styles.header}>

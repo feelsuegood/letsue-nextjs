@@ -1,7 +1,7 @@
 import MovieCredit from "../../../../../components/movie-credits";
 
 interface ICredit {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export default async function CreditPage({ params }: ICredit) {

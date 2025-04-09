@@ -1,8 +1,8 @@
 import MovieProvider from "../../../../../components/movie-providers";
 
 interface IProvider {
-  params: { id: string };
-  searchParams: { country_code: string };
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ country_code: string }>;
 }
 
 export default async function ProvidersPage({

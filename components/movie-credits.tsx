@@ -1,4 +1,4 @@
-import styles from "../styles/movie-credit.module.css";
+import styles from "../styles/movie-credits.module.css";
 import { API_URL } from "../lib/constants";
 import Link from "next/link";
 
@@ -14,6 +14,7 @@ export default async function MovieCredit({ id }: { id: string }) {
       <Link href={`/movies/${id}`} className={styles.back_link}>
         &larr; Movie Info
       </Link>
+      <h2 className={styles.title}>Movie Credits</h2>
       <div className={styles.container}>
         {credits.map((credit) => (
           <div key={credit.id} className={styles.credit_card}>

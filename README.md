@@ -11,26 +11,30 @@ app/
 │   └── movies/      # Movie details and credits
 │       └── [id]/    # Movie detail page
 │           ├── credits/    # Movie credits
-│           ├── similar/    # Similar movies (Coming Soon)
-│           └── provider/   # Streaming providers (Coming Soon)
+│           ├── similar/    # Similar movies
+│           └── provider/   # Streaming providers
 ├── about-us/        # About us page
 ├── layout.tsx       # Root layout
 └── not-found.tsx    # 404 page
 
 components/
 ├── movie.tsx        # Movie card component
-├── movie-credit.tsx # Movie credits component
+├── movie-credits.tsx # Movie credits component
 ├── movie-info.tsx   # Movie information component
 ├── movie-videos.tsx # Movie videos component
+├── movie-providers.tsx # Movie providers component
+├── movie-similar.tsx # Movie similar component
 └── navigation.tsx   # Navigation component
 
 styles/
 ├── global.css       # Global styles
 ├── home.module.css  # Home page styles
 ├── movie.module.css # Movie card styles
-├── movie-credit.module.css # Movie credits styles
+├── movie-credits.module.css # Movie credits styles
 ├── movie-info.module.css   # Movie info styles
 ├── movie-videos.module.css # Movie videos styles
+├── movie-providers.module.css # Movie providers styles
+├── movie-similar.module.css # Movie similar styles
 └── navigation.module.css   # Navigation styles
 
 lib/

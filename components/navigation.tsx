@@ -6,16 +6,16 @@ import styles from "../styles/navigation.module.css";
 
 export default function Navigation() {
   const path = usePathname();
-  console.log(path);
+  // console.log(path);
   return (
     <nav className={styles.nav}>
       <ul>
         <li>
-          <Link href="/">Home</Link>
+          <Link href="/">Home&nbsp;</Link>
           {path === "/" ? " 👀" : ""}
         </li>
         <li>
-          <Link href="/about-us">About Us</Link>
+          <Link href="/about-us">About Us&nbsp;</Link>
           {path === "/about-us" ? " 👀" : ""}
         </li>
       </ul>

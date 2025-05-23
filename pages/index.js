@@ -88,13 +88,23 @@ export default function Home({ results }) {
 //* this function runs only server side
 // user can't see this part
 export async function getServerSideProps() {
-  const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000";
-  const results = await (await fetch(`${baseUrl}/api/movies`)).json();
-  return {
-    props: {
-      results,
-    },
-  };
+  const API_KEY = process.env.API_KEY;
+  try {
+    const url = process.env.VERCEL_URL
+      ? `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&api_key=${API_KEY}`
+      : "http://localhost:3000/api/movies";
+    const results = await (await fetch(`${url}`)).json();
+    return {
+      props: {
+        results,
+      },
+    };
+  } catch (error) {
+    console.error("Failed to fetch movies:", error);
+    return {
+      props: {
+        results: [],
+      },
+    };
+  }
 }

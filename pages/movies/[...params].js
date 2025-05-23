@@ -6,7 +6,7 @@ import Seo from "../../components/Seo";
 // export default function Detail() {
 export default function Detail({ params }) {
   const router = useRouter();
-  // if user access through incogmito mode, routher doesn't exist
+  // if user access through incogmito mode, router doesn't exist
   //! don't forget to put empty array
   // in this case search engine can't find the data in the page
   //* can try getServerSideProps()

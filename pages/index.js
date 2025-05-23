@@ -90,13 +90,14 @@ export default function Home({ results }) {
 export async function getServerSideProps() {
   const API_KEY = process.env.API_KEY;
   try {
-    const url = process.env.VERCEL_URL
-      ? `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&api_key=${API_KEY}`
-      : "http://localhost:3000/api/movies";
-    const results = await (await fetch(`${url}`)).json();
+    const { results } = await (
+      await fetch(
+        `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&api_key=${API_KEY}`,
+      )
+    ).json();
     return {
       props: {
-        results,
+        results: results || [],
       },
     };
   } catch (error) {

@@ -88,9 +88,10 @@ export default function Home({ results }) {
 //* this function runs only server side
 // user can't see this part
 export async function getServerSideProps() {
-  const results = await (
-    await fetch(`http://localhost:3000/api/movies`)
-  ).json();
+  const baseUrl = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000";
+  const results = await (await fetch(`${baseUrl}/api/movies`)).json();
   return {
     props: {
       results,

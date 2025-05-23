@@ -15,15 +15,17 @@ export default function Home({ results }) {
   const router = useRouter();
   const onClick = (id, title) => {
     //* masking url
-    router.push(
-      {
-        pathname: `movies/${id}`,
-        query: {
-          title,
-        },
-      },
-      `movies/${id}`,
-    );
+    // router.push(
+    //   {
+    //     pathname: `movies/${id}`,
+    //     query: {
+    //       title,
+    //     },
+    //   },
+    //   `movies/${id}`,
+    // );
+    //* catch-all url
+    router.push(`/movies/${title}/${id}`);
   };
   return (
     <div className="container">
@@ -36,7 +38,7 @@ export default function Home({ results }) {
           key={movie.id}
         >
           <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
-          <Link
+          {/* <Link
             //* masking url
             href={{
               pathname: `movies/${movie.id}`,
@@ -45,12 +47,13 @@ export default function Home({ results }) {
               },
             }}
             as={`movies/${movie.id}`}
-          >
-            {" "}
+          > */}
+          {/* catch-all url */}
+          <Link href={`/movies/${movie.original_title}/${movie.id}`}>
+            <a>
+              <h5>{movie.original_title}</h5>
+            </a>
           </Link>
-          <a>
-            <h5>{movie.original_title}</h5>{" "}
-          </a>
         </div>
       ))}
       {/* style */}

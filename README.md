@@ -48,21 +48,6 @@ npm run dev
 
 ## 🔄 Switching Next.js Versions
 
-### To Next.js 12
-```bash
-# 1. Switch branch
-git checkout nextjs-12
-
-# 2. Clean up
-rm -rf node_modules .next package-lock.json
-rm -rf .eslintcache .next-cache
-npm cache clean --force
-
-# 3. Install & Build
-npm install
-npm run build
-```
-
 ### To Next.js 15
 ```bash
 # 1. Switch branch
@@ -73,9 +58,22 @@ rm -rf node_modules .next package-lock.json
 rm -rf .eslintcache .next-cache
 npm cache clean --force
 
-# 3. Install & Build
+# 3. Install
 npm install
-npm run build
+```
+
+### To Next.js 12
+```bash
+# 1. Switch branch
+git checkout nextjs-12
+
+# 2. Clean up
+rm -rf node_modules .next package-lock.json
+rm -rf .eslintcache .next-cache
+npm cache clean --force
+
+# 3. Install
+npm install
 ```
 
 ## 📦 Dependencies

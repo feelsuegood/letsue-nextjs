@@ -1,6 +1,8 @@
+// import { API_URL } from "../lib/constants";
 import styles from "../styles/movie-credits.module.css";
-import { API_URL } from "../lib/constants";
 import Link from "next/link";
+
+const API_URL = process.env.API_URL;
 
 export async function getMovieCredit(id: string) {
   const response = await fetch(`${API_URL}/${id}/credits`);

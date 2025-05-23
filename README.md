@@ -1,88 +1,121 @@
-# Movie App Built with Next.js
+# 🎬 Movie App
 
-A movie information website built with Next.js 14
+A simple movie app using Next.js (supports both v12 and v15)
 
-## Project Structure
+## 🎯 Features
+- Show movie list
+- Show movie details
+- Show movie credits
+- Show similar movies
+- Show streaming providers
+- Mobile friendly
 
+## 📁 Project Structure
 ```
-app/
-├── (home)/          # Home page route group
-├── (movies)/        # Movies route group
-│   └── movies/      # Movie details and credits
-│       └── [id]/    # Movie detail page
-│           ├── credits/    # Movie credits
-│           ├── similar/    # Similar movies
-│           └── provider/   # Streaming providers
-├── about-us/        # About us page
-├── layout.tsx       # Root layout
-└── not-found.tsx    # 404 page
-
-components/
-├── movie.tsx        # Movie card component
-├── movie-credits.tsx # Movie credits component
-├── movie-info.tsx   # Movie information component
-├── movie-videos.tsx # Movie videos component
-├── movie-providers.tsx # Movie providers component
-├── movie-similar.tsx # Movie similar component
-└── navigation.tsx   # Navigation component
-
-styles/
-├── global.css       # Global styles
-├── home.module.css  # Home page styles
-├── movie.module.css # Movie card styles
-├── movie-credits.module.css # Movie credits styles
-├── movie-info.module.css   # Movie info styles
-├── movie-videos.module.css # Movie videos styles
-├── movie-providers.module.css # Movie providers styles
-├── movie-similar.module.css # Movie similar styles
-└── navigation.module.css   # Navigation styles
-
-lib/
-└── constants.ts     # API constants
+app/                # Pages and routes
+components/         # UI components
+styles/            # CSS files
+lib/               # Shared code
 ```
 
-## Upcoming Features
-
-- Similar Movies: Show movies similar to the current movie
-- Streaming Providers: Display where the movie is available to stream
-
-## Styling
-
-The project uses CSS Modules for component-specific styling:
-
-- `global.css`: Global styles and CSS variables
-- Component-specific styles are scoped using CSS Modules (`.module.css`)
-- Each component has its own style module for better maintainability
-
-## Tech Stack
-
-- Next.js 14
-- React 19
+## 🛠 Tech Stack
+- Next.js (v12 or v15)
+- React
 - TypeScript
 - CSS Modules
 
-## Getting Started
+## 🚀 Getting Started
 
-1. Install dependencies:
+1. Clone this project
+```bash
+git clone [repository-url]
+```
 
+2. Install packages
 ```bash
 npm install
 ```
 
-2. Run the development server:
+3. Add `.env` file
+```
+API_KEY=your_api_key_here
+```
 
+4. Start dev server
 ```bash
 npm run dev
 ```
 
-3. Build for production:
+## 🔄 Switching Next.js Versions
 
+### To Next.js 12
 ```bash
+# 1. Switch branch
+git checkout nextjs-12
+
+# 2. Clean up
+rm -rf node_modules .next package-lock.json
+rm -rf .eslintcache .next-cache
+npm cache clean --force
+
+# 3. Install & Build
+npm install
 npm run build
 ```
 
-4. Start production server:
-
+### To Next.js 15
 ```bash
-npm start
+# 1. Switch branch
+git checkout master
+
+# 2. Clean up
+rm -rf node_modules .next package-lock.json
+rm -rf .eslintcache .next-cache
+npm cache clean --force
+
+# 3. Install & Build
+npm install
+npm run build
 ```
+
+## 📦 Dependencies
+
+### Next.js 12
+```json
+{
+  "dependencies": {
+    "next": "12.0.7",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "8.4.1",
+    "eslint-config-next": "12.0.7"
+  }
+}
+```
+
+### Next.js 15
+```json
+{
+  "dependencies": {
+    "next": "15.2.4",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.13",
+    "@types/react": "19.0.12",
+    "typescript": "5.8.2",
+    "eslint": "8.56.0",
+    "eslint-config-next": "15.2.4"
+  }
+}
+```
+
+## 💡 Important Notes
+- Each version has its own branch
+- Clean all caches when switching versions
+- Check TypeScript types after switching
+- Update ESLint rules if needed
+- Test the app after switching

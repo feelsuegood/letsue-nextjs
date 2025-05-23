@@ -8,7 +8,9 @@ interface IMovieInfoProps {
   movie: {
     title: string;
     poster_path: string;
+    // medium_cover_image: string;
     vote_average: number;
+    // rating: number;
     overview: string;
   };
   id: string;
@@ -21,12 +23,14 @@ export default function MovieInfo({ movie, id }: IMovieInfoProps) {
     <div className={styles.container}>
       <img
         src={movie.poster_path}
+        // src={movie.medium_cover_image}
         className={styles.poster}
         alt={movie.title}
       />
       <div className={styles.info}>
         <h1 className={styles.title}>{movie.title}</h1>
         <h3>⭐️ {movie.vote_average.toFixed(1)}</h3>
+        {/* <h3>⭐️ {movie.rating.toFixed(1)}</h3> */}
         <p>{movie.overview}</p>
         <Link href={`/movies/${id}/credits`} className={styles.link}>
           &rarr; Credits

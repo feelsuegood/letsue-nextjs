@@ -1,4 +1,4 @@
-import { API_URL } from "../../lib/constants";
+// import { API_URL } from "../../lib/constants";
 import Movie from "../../components/movie";
 import styles from "../../styles/home.module.css";
 
@@ -6,20 +6,35 @@ export const metadata = {
   title: "Home",
 };
 
+export interface Movie {
+  id: string;
+  // medium_cover_image: string;
+  poster_path: string;
+  title: string;
+}
+
+const API_URL = process.env.API_URL;
+// const API_URL_V2 = process.env.API_URL_V2
+
 async function getMovies() {
+  // const response = await fetch(`${API_URL_V2}/list_movies.json`);
+  // const json = await response.json();
+  // const movies = json.data.movies;
+  // return movies;
   const response = await fetch(API_URL);
-  const json = await response.json();
-  return json;
+  const movies = await response.json();
+  return movies;
 }
 
 export default async function HomePage() {
   const movies = await getMovies();
   return (
     <div className={styles.container}>
-      {movies.map((movie) => (
+      {movies.map((movie: Movie) => (
         <Movie
           key={movie.id}
           id={movie.id}
+          // poster_path={movie.medium_cover_image}
           poster_path={movie.poster_path}
           title={movie.title}
         />

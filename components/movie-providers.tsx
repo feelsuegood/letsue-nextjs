@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "../styles/movie-providers.module.css";
-import { API_URL } from "../lib/constants";
+// import { API_URL } from "../lib/constants";
 
 interface Provider {
   provider_id: number;
@@ -11,8 +11,10 @@ interface Provider {
 
 interface CountryData {
   link: string;
-  flatrate: Provider[];
+  buy: Provider[];
 }
+
+const API_URL = process.env.API_URL;
 
 export async function getMovieProvider(id: string, country_code: string) {
   try {
@@ -28,12 +30,14 @@ export async function getMovieProvider(id: string, country_code: string) {
 
     const data = await response.json();
     // console.log("Raw API Response:", data);
+
     if (!data || typeof data !== "object") {
       throw new Error("Invalid API response");
     }
 
     const normalizedCountryCode = country_code.toUpperCase();
     const countryData: CountryData = data[normalizedCountryCode];
+    // console.log(countryData);
 
     if (!countryData) {
       console.error("No providers found for country:", normalizedCountryCode);
@@ -59,16 +63,19 @@ export default async function MovieProvider({
 }) {
   try {
     const countryData = await getMovieProvider(id, country_code);
+
     return (
       <div className={styles.container}>
         <Link href={`/movies/${id}`} className={styles.backLink}>
           &larr; Back to Movie
         </Link>
         <h2 className={styles.title}>
-          Streaming Providers in {country_code.toUpperCase()}
+          <Link href={countryData.link} className={styles.backLink}>
+            Streaming Providers in {country_code.toUpperCase()}
+          </Link>
         </h2>
         <div className={styles.providersList}>
-          {countryData.flatrate?.map((provider: Provider) => (
+          {countryData.buy?.map((provider: Provider) => (
             <div key={provider.provider_id} className={styles.providerCard}>
               <img
                 src={provider.logo_path}

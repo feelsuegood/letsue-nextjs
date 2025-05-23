@@ -4,10 +4,10 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Let's go NextJS",
-    default: "Let's go NextJS",
+    template: "%s | Movie App Built with Next.js",
+    default: "Movie App Built with Next.js",
   },
-  description: "Let's go into a movie world with NestJS",
+  description: "Let's go into a movie world",
 };
 
 export default function RootLayout({

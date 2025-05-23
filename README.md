@@ -1,4 +1,4 @@
-# LetsGo NextJS
+# Movie App Built with Next.js
 
 A movie information website built with Next.js 14
 

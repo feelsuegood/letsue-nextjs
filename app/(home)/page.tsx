@@ -14,13 +14,8 @@ export interface Movie {
 }
 
 const API_URL = process.env.API_URL;
-// const API_URL_V2 = process.env.API_URL_V2
 
 async function getMovies() {
-  // const response = await fetch(`${API_URL_V2}/list_movies.json`);
-  // const json = await response.json();
-  // const movies = json.data.movies;
-  // return movies;
   const response = await fetch(API_URL);
   const movies = await response.json();
   return movies;

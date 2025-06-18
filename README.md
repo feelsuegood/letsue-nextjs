@@ -23,29 +23,7 @@ lib/               # Shared code
 - React
 - TypeScript
 - CSS Modules
-
-## 🚀 Getting Started
-
-1. Clone this project
-```bash
-git clone [repository-url]
-```
-
-2. Install packages
-```bash
-npm install
-```
-
-3. Add `.env` file
-```
-API_KEY=your_api_key_here
-```
-
-4. Start dev server
-```bash
-npm run dev
-```
-
+- 
 ## 🔄 Switching Next.js Versions
 
 ### To Next.js 15
@@ -112,7 +90,7 @@ npm install
 ```
 
 ## 💡 Important Notes
-- Each version has its own branch
+- Each version has its branch
 - Clean all caches when switching versions
 - Check TypeScript types after switching
 - Update ESLint rules if needed

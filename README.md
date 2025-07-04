@@ -23,7 +23,7 @@ lib/               # Shared code
 - React
 - TypeScript
 - CSS Modules
-- 
+  
 ## 🔄 Switching Next.js Versions
 
 ### To Next.js 15
